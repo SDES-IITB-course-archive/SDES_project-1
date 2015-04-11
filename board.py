@@ -18,6 +18,7 @@ import math as mat
 #	def check_winner(self):
 #		# check if any condition of winning is satisfying or not
 #		print "In the check winner"
+
 class button():
 	def __init__(self, cx, cy, h, l, label):
 		self.cx = cx
@@ -69,7 +70,7 @@ def make_matrix_to_check(disks):
 		if disks.index(d)%2 == 0:
 			to_check[d[1]][d[0]] = 1
 		else:
-			to_check[d[1]][d[0]] = 0
+			to_check[d[1]][d[0]] = 2
 	return to_check
 	
 	
@@ -137,8 +138,9 @@ while not done:
 					else:
 #						print i , j
 						disks.append([i, j])
-					
-#				 reset the game
+			else:
+				disks = []
+				print "reset the game"
 #			print disks
 			# check if any of the box is clicked
 			
